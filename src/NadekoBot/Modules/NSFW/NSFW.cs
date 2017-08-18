@@ -19,7 +19,9 @@ namespace NadekoBot.Modules.NSFW
 {
     public class NSFW : NadekoTopLevelModule<SearchesService>
     {
-        private static readonly ConcurrentDictionary<ulong, Timer> _autoNsfwTimers = new ConcurrentDictionary<ulong, Timer>();
+        private static readonly ConcurrentDictionary<ulong, Timer> _autoHentaiTimers = new ConcurrentDictionary<ulong, Timer>();
+        private static readonly ConcurrentDictionary<ulong, Timer> _autoBoobTimers = new ConcurrentDictionary<ulong, Timer>();
+        private static readonly ConcurrentDictionary<ulong, Timer> _autoButtTimers = new ConcurrentDictionary<ulong, Timer>();
         private static readonly ConcurrentHashSet<ulong> _hentaiBombBlacklist = new ConcurrentHashSet<ulong>();
 
         #region Internals
@@ -213,7 +215,7 @@ namespace NadekoBot.Modules.NSFW
 
             if (interval == 0)
             {
-                if (!_autoNsfwTimers.TryRemove(Context.Channel.Id, out t)) return;
+                if (!_autoHentaiTimers.TryRemove(Context.Channel.Id, out t)) return;
 
                 t.Change(Timeout.Infinite, Timeout.Infinite); //proper way to disable the timer
                 await ReplyConfirmLocalized("autohentai_stopped").ConfigureAwait(false);
@@ -240,7 +242,7 @@ namespace NadekoBot.Modules.NSFW
                 }
             }, null, interval * 1000, interval * 1000);
 
-            _autoNsfwTimers.AddOrUpdate(Context.Channel.Id, t, (key, old) =>
+            _autoHentaiTimers.AddOrUpdate(Context.Channel.Id, t, (key, old) =>
             {
                 old.Change(Timeout.Infinite, Timeout.Infinite);
                 return t;
@@ -259,7 +261,7 @@ namespace NadekoBot.Modules.NSFW
 
             if (interval == 0)
             {
-                if (!_autoNsfwTimers.TryRemove(Context.Channel.Id, out t)) return;
+                if (!_autoBoobTimers.TryRemove(Context.Channel.Id, out t)) return;
 
                 t.Change(Timeout.Infinite, Timeout.Infinite); //proper way to disable the timer
                 await ReplyConfirmLocalized("autoboobs_stopped").ConfigureAwait(false);
@@ -281,7 +283,7 @@ namespace NadekoBot.Modules.NSFW
                 }
             }, null, interval * 1000, interval * 1000);
 
-            _autoNsfwTimers.AddOrUpdate(Context.Channel.Id, t, (key, old) =>
+            _autoBoobTimers.AddOrUpdate(Context.Channel.Id, t, (key, old) =>
             {
                 old.Change(Timeout.Infinite, Timeout.Infinite);
                 return t;
@@ -298,7 +300,7 @@ namespace NadekoBot.Modules.NSFW
 
             if (interval == 0)
             {
-                if (!_autoNsfwTimers.TryRemove(Context.Channel.Id, out t)) return;
+                if (!_autoButtTimers.TryRemove(Context.Channel.Id, out t)) return;
 
                 t.Change(Timeout.Infinite, Timeout.Infinite); //proper way to disable the timer
                 await ReplyConfirmLocalized("autobutts_stopped").ConfigureAwait(false);
@@ -320,7 +322,7 @@ namespace NadekoBot.Modules.NSFW
                 }
             }, null, interval * 1000, interval * 1000);
 
-            _autoNsfwTimers.AddOrUpdate(Context.Channel.Id, t, (key, old) =>
+            _autoButtTimers.AddOrUpdate(Context.Channel.Id, t, (key, old) =>
             {
                 old.Change(Timeout.Infinite, Timeout.Infinite);
                 return t;
