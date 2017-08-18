@@ -77,6 +77,7 @@ namespace NadekoBot.Modules.Administration
 
             [NadekoCommand, Usage, Description, Aliases]
             [RequireContext(ContextType.Guild)]
+            [OwnerOnly]
             [RequireUserPermission(GuildPermission.BanMembers)]
             [Priority(2)]
             public Task Warnlog(int page, IGuildUser user)
