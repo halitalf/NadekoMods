@@ -69,7 +69,6 @@ namespace NadekoBot.Modules.Administration
             [RequireUserPermission(ChannelPermission.ManageMessages)]
             [RequireBotPermission(GuildPermission.ManageMessages)]
             [Priority(1)]
-            [NadekoCommand, Usage, Description, Aliases]
             public async Task AutoPrune(int interval, int count = 100)
             {
                 Timer t;
