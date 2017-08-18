@@ -4,6 +4,7 @@ using NadekoBot.Extensions;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Concurrent;
 using NadekoBot.Common.Attributes;
 using NadekoBot.Modules.Administration.Services;
 
