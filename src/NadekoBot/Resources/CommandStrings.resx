@@ -3586,7 +3586,7 @@
     <value>autobutts</value>
   </data>
   <data name="autobutts_desc" xml:space="preserve">
-    <value>Posts a butts every X seconds. 20 seconds minimum. Provide no arguments to disable.</value>
+    <value>Posts a butts every X seconds. 20 seconds minimum. Provide no arguments to disable. </value>
   </data>
   <data name="autobutts_usage" xml:space="preserve">
     <value>`{0}autobutts 30` or `{0}autobutts`</value>
