@@ -53,6 +53,31 @@ namespace NadekoBot.Modules.Administration
             [NadekoCommand, Usage, Description, Aliases]
             [RequireContext(ContextType.Guild)]
             [RequireUserPermission(GuildPermission.BanMembers)]
+            public async Task AnonWarn(IGuildUser user, [Remainder] string reason = null)
+            {
+                try
+                {
+                    await (await user.GetOrCreateDMChannelAsync()).EmbedAsync(new EmbedBuilder().WithErrorColor()
+                                     .WithDescription(GetText("warned_on", Context.Guild.ToString()))
+                                     .AddField(efb => efb.WithName(GetText("reason")).WithValue(reason ?? "-")))
+                        .ConfigureAwait(false);
+                }
+                catch { }
+                var punishment = await _service.Warn(Context.Guild, user.Id, Context.User.ToString(), reason).ConfigureAwait(false);
+
+                if (punishment == null)
+                {
+                    await ReplyConfirmLocalized("user_warned", Format.Bold(user.ToString())).ConfigureAwait(false);
+                }
+                else
+                {
+                    await ReplyConfirmLocalized("user_warned_and_punished", Format.Bold(user.ToString()), Format.Bold(punishment.ToString())).ConfigureAwait(false);
+                }
+            }
+
+            [NadekoCommand, Usage, Description, Aliases]
+            [RequireContext(ContextType.Guild)]
+            [RequireUserPermission(GuildPermission.BanMembers)]
             [Priority(2)]
             public Task Warnlog(int page, IGuildUser user)
                 => Warnlog(page, user.Id);
