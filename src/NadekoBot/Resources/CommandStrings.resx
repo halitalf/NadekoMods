@@ -3591,4 +3591,13 @@
   <data name="autobutts_usage" xml:space="preserve">
     <value>`{0}autobutts 30` or `{0}autobutts`</value>
   </data>
+  <data name="autoprune_cmd" xml:space="preserve">
+    <value>autoprune autoclear</value>
+  </data>
+  <data name="autoprune_desc" xml:space="preserve">
+    <value>`{0}autoprune X` removes all Nadeko's messages in the last 100 messages every `X` seconds. `{0}autoprune X Y` removes last `Y` number of messages from the channel (up to 1000) every `X` seconds. Minimum of 20 seconds between prunes.</value>
+  </data>
+  <data name="autoprune_usage" xml:space="preserve">
+    <value>`{0}autoprune seconds` or `{0}autoprune seconds number`</value>
+  </data>
 </root>

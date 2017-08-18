@@ -64,6 +64,7 @@ Commands and aliases | Description | Usage
 `.antispamignore` | Toggles whether antispam ignores current channel. Antispam must be enabled.  | `.antispamignore`
 `.antilist` `.antilst` | Shows currently enabled protection features.  | `.antilist`
 `.prune` `.clear` | `.prune` removes all Nadeko's messages in the last 100 messages. `.prune X` removes last `X` number of messages from the channel (up to 100). `.prune @Someone` removes all Someone's messages in the last 100 messages. `.prune @Someone X` removes last `X` number of 'Someone's' messages in the channel.  | `.prune` or `.prune 5` or `.prune @Someone` or `.prune @Someone X`
+`.autoprune` `.autoclear` | `{0}autoprune X` removes all Nadeko's messages in the last 100 messages every `X` seconds. `{0}autoprune X Y` removes last `Y` number of messages from the channel (up to 1000) every `X` seconds. Minimum of 20 seconds between prunes.
 `.slowmode` | Toggles slowmode. Disable by specifying no parameters. To enable, specify a number of messages each user can send, and an interval in seconds. For example 1 message every 5 seconds. **Requires ManageMessages server permission.** | `.slowmode 1 5` or `.slowmode`
 `.slowmodewl` | Ignores a role or a user from the slowmode feature. **Requires ManageMessages server permission.** | `.slowmodewl SomeRole` or `.slowmodewl AdminDude`
 `.adsarm` | Toggles the automatic deletion of confirmations for `.iam` and `.iamn` commands. **Requires ManageMessages server permission.** | `.adsarm`

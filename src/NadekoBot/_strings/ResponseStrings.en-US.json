@@ -43,6 +43,8 @@
   "pokemon_type_of_user": "Type of {0} is {1}",
   "pokemon_user_not_found": "User not found.",
   "pokemon_you_fainted": "You fainted, so you are not able to move!",
+  "administration_autoprune_started": "Auto prune started. Messages will be pruned every {0} seconds.",
+  "administration_autoprune_stopped": "Auto prune stopped.",
   "administration_aar_disabled": "**Auto assign role** on user join is now **disabled**.",
   "administration_aar_enabled": "**Auto assign role** on user join is now **enabled**.",
   "administration_attachments": "Attachments",
