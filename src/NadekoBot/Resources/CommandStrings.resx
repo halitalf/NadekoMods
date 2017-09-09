@@ -3581,5 +3581,13 @@
   </data>
   <data name="autoprune_usage" xml:space="preserve">
     <value>`{0}autoprune seconds` or `{0}autoprune seconds number`</value>
+  <data name="anonwarn_cmd" xml:space="preserve">
+    <value>anonwarn awarn</value>
+  </data>
+  <data name="anonwarn_desc" xml:space="preserve">
+    <value>Anonymously warn a user</value>
+  </data>
+  <data name="anonwarn_usage" xml:space="preserve">
+    <value>`{0}anonwarn @b1nzy Very rude person`</value>
   </data>
 </root>

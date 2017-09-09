@@ -103,7 +103,8 @@ Commands and aliases | Description | Usage
 `.timezones` | Lists all timezones available on the system to be used with `.timezone`.  | `.timezones`
 `.timezone` | Sets this guilds timezone. This affects bot's time output in this server (logs, etc..)  | `.timezone` or `.timezone GMT Standard Time`
 `.warn` | Warns a user. **Requires BanMembers server permission.** | `.warn @b1nzy Very rude person`
-`.warnlog` | See a list of warnings of a certain user. **Requires BanMembers server permission.** | `.warnlog @b1nzy`
+`.anonwarn` | Warns a user without telling them who gave them the warning. **Requires BanMembers server permission.** | `.warn @b1nzy Very rude person`
+`.warnlog` | See a list of warnings of a certain user. **Bot owner only. Requires BanMembers server permission.** | `.warnlog @b1nzy`
 `.warnlogall` | See a list of all warnings on the server. 15 users per page. **Requires BanMembers server permission.** | `.warnlogall` or `.warnlogall 2`
 `.warnclear` `.warnc` | Clears all warnings from a certain user. **Requires BanMembers server permission.** | `.warnclear @PoorDude`
 `.warnpunish` `.warnp` | Sets a punishment for a certain number of warnings. Provide no punishment to remove. **Requires BanMembers server permission.** | `.warnpunish 5 Ban` or `.warnpunish 3`
