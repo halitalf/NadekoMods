@@ -58,20 +58,20 @@ namespace NadekoBot.Services.Database.Repositories.Impl
                 .Where(x => x.GuildId == guildId)
                 .Count(x => x.Xp > (_set
                     .Where(y => y.UserId == userId && y.GuildId == guildId)
-                    .Sum(y => y.Xp))) + 1;
+                    .Select(y => y.Xp)
+                    .DefaultIfEmpty()
+                    .Sum())) + 1;
         }
 
         public (ulong UserId, int TotalXp)[] GetUsersFor(int page)
         {
-            return (from orduser in _set
-                    group orduser by orduser.UserId into g
-                    orderby g.Sum(x => x.Xp) descending
-                    select new { UserId = g.Key, TotalXp = g.Sum(x => x.Xp) })
-                    .Skip(page * 9)
-                    .Take(9)
-                    .AsEnumerable()
-                    .Select(x => (x.UserId, x.TotalXp))
-                    .ToArray();
+            return _set.GroupBy(x => x.UserId)
+                .OrderByDescending(x => x.Sum(y => y.Xp))
+                .Skip(page * 9)
+                .Take(9)
+                .AsEnumerable()
+                .Select(x => (x.Key, x.Sum(y => y.Xp)))
+                .ToArray();
         }
     }
 }

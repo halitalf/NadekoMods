@@ -774,15 +774,6 @@
   <data name="donadd_usage" xml:space="preserve">
     <value>`{0}donadd Donate Amount`</value>
   </data>
-  <data name="announce_cmd" xml:space="preserve">
-    <value>announce</value>
-  </data>
-  <data name="announce_desc" xml:space="preserve">
-    <value>Sends a message to all servers' default channel that bot is connected to.</value>
-  </data>
-  <data name="announce_usage" xml:space="preserve">
-    <value>`{0}announce Useless spam`</value>
-  </data>
   <data name="savechat_cmd" xml:space="preserve">
     <value>savechat</value>
   </data>
@@ -3643,7 +3634,7 @@
     <value>`{0}xprr 3 Social`</value>
   </data>
   <data name="xprolereward_desc" xml:space="preserve">
-    <value>Sets a role reward on a specified level.</value>
+    <value>Sets a role reward on a specified level. Provide no role name in order to remove the role reward.</value>
   </data>
   <data name="xpleaderboard_cmd" xml:space="preserve">
     <value>xpleaderboard xplb</value>
@@ -3797,5 +3788,14 @@
   </data>
   <data name="clubleaderboard_desc" xml:space="preserve">
     <value>Shows club rankings on the specified page.</value>
+  </data>
+  <data name="nsfwclearcache_cmd" xml:space="preserve">
+    <value>nsfwcc</value>
+  </data>
+  <data name="nsfwclearcache_usage" xml:space="preserve">
+    <value>`{0}nsfwcc`</value>
+  </data>
+  <data name="nsfwclearcache_desc" xml:space="preserve">
+    <value>Clears nsfw cache.</value>
   </data>
 </root>

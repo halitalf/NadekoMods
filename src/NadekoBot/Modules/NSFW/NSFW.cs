@@ -4,7 +4,6 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Net.Http;
 using NadekoBot.Extensions;
 using System.Threading;
 using System.Collections.Concurrent;
@@ -15,7 +14,6 @@ using NadekoBot.Modules.Searches.Common;
 using NadekoBot.Modules.Searches.Services;
 using NadekoBot.Modules.NSFW.Exceptions;
 
-//todo static httpclient
 namespace NadekoBot.Modules.NSFW
 {
     public class NSFW : NadekoTopLevelModule<SearchesService>
@@ -205,6 +203,15 @@ namespace NadekoBot.Modules.NSFW
                 else
                     await ReplyConfirmLocalized("blacklisted_tag_remove", tag).ConfigureAwait(false);
             }
+        }
+
+        [NadekoCommand, Usage, Description, Aliases]
+        [RequireContext(ContextType.Guild)]
+        [OwnerOnly]
+        public Task NsfwClearCache()
+        {
+            _service.ClearCache();
+            return Context.Channel.SendConfirmAsync("?");
         }
 
 #if !GLOBAL_NADEKO
